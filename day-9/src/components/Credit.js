@@ -2,7 +2,7 @@
 
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Fragment, useState } from 'react';
 const credit = () =>{
     const [credit, setCredit] = useState("add a new credit");
     const onSubmitCredits = async (event) => {
@@ -30,6 +30,36 @@ const credit = () =>{
 
 }
 class Credit extends Component{
-    
+    render() {
+        
+        return (
+            <div>
+              <img src="https://letstalkpayments.com/wp-content/uploads/2016/04/Bank.png" alt="bank"/>
+              <h1 className = "text-center mt-5">Bank of React</h1>
+
+              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/userProfile">User Profile</Link></button>
+
+
+              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/accountBalance">Account Balance</Link></button>
+
+              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/home">Home</Link></button>
+
+              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/login">Login</Link></button>
+
+              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/credit">Credit</Link></button>
+
+              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/debit">Debit</Link></button>
+
+
+              <AccountBalance accountBalance={this.props.accountBalance}/>
+
+
+            </div>
+        );
+      }
+
+
 
 }
+
+export default Credit;

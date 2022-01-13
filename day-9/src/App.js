@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import LogIn from './components/Login';
+import Credit from './components/Credit';
 
 
 class App extends Component {
@@ -24,6 +25,10 @@ class App extends Component {
     this.setState({currentUser: newUser})
   }
 
+  mockCredit = () =>{
+
+  }
+
 
   render() {
     const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
@@ -32,7 +37,7 @@ class App extends Component {
   );
   const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
   
-  const CreditComponent = () => (<Credit user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
+  const CreditComponent = () => (<Credit user={this.state.currentUser} ammount={this.props.accountBalance} {...this.props}/>)
   
   
  
@@ -43,6 +48,8 @@ class App extends Component {
         <Route exact path="/home" element={<HomeComponent/>}/>
         <Route exact path="/userProfile" element={<UserProfileComponent/>}/>
         <Route exact path="/login" element={<LogInComponent/>}/>
+        <Route exact path="/accountBalance" element={<LogInComponent/>}/>
+        <Route exact path="/accountBalance" element={<LogInComponent/>}/>
         </Routes>
         
       </BrowserRouter>
