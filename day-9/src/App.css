@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+div{
+  background-color: #61dafb;
+}
+
+body {
+  background-color: #282c34;
+  color: white;
+  padding: 40px;
+  font-family: Sans-Serif;
+  text-align: center;
+}
