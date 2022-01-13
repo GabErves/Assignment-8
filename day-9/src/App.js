@@ -6,18 +6,21 @@ import LogIn from './components/Login';
 import Credit from './components/Credit';
 
 
-class App extends Component {
-  constructor() {
-    super();
+function App () {
+  
+  
+  const onChangeName = (event) => {
+    setName(event.target.value);
+  };
 
-    this.state = {
-      accountBalance: 14568.27,
-      currentUser: {
-        userName: 'bob_loblaw',
-        memberSince: '08/23/99',
-      }
-    }
-  }
+  const onChangeAmount = (event) =>{
+    setAmount(parseInt(event.target.value));
+  };
+
+  
+
+
+
 
   mockLogIn = (logInInfo) => {
     const newUser = {...this.state.currentUser}
@@ -25,19 +28,17 @@ class App extends Component {
     this.setState({currentUser: newUser})
   }
 
-  mockCredit = () =>{
-
-  }
+  
 
 
-  render() {
+  render(); {
     const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
     const UserProfileComponent = () => (
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
   );
   const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
   
-  const CreditComponent = () => (<Credit user={this.state.currentUser} ammount={this.props.accountBalance} {...this.props}/>)
+  //const CreditComponent = () => (<Credit user={this.state.currentUser} ammount={this.props.accountBalance} {...this.props}/>)
   
   
  
@@ -56,8 +57,9 @@ class App extends Component {
         
     );
   }
-  
-  
+
 }
+
+
 
 export default App;
