@@ -12,6 +12,12 @@ import {Link} from 'react-router-dom';
 
               <Link to="/userProfile">User Profile</Link>
 
+
+              <Link to="/accountBalance">Account Balance</Link>
+
+              <Link to="/home">Home</Link>
+
+
               <AccountBalance accountBalance={this.props.accountBalance}/>
 
 

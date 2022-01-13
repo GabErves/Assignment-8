@@ -1,6 +1,7 @@
 // src/components/UserProfile.js
 
 import React, {Component} from 'react';
+import AccountBalance from './AccountBalance';
 
 class UserProfile extends Component {
   render() {
@@ -10,6 +11,8 @@ class UserProfile extends Component {
 
           <div>Username: {this.props.userName}</div>
           <div>Member Since: {this.props.memberSince}</div>
+          <div>Account Balance: {this.props.accountBalance}</div>
+          
         </div>
     );
   }

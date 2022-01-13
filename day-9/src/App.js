@@ -32,6 +32,7 @@ class App extends Component {
   );
   const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
   
+  
  
 
     return (
