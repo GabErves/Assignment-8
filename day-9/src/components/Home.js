@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
     // trying to connect the links to each profile all around
     class Home extends Component {
       render() {
+        
         return (
             <div>
               <img src="https://letstalkpayments.com/wp-content/uploads/2016/04/Bank.png" alt="bank"/>
@@ -16,6 +17,12 @@ import {Link} from 'react-router-dom';
               <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/accountBalance">Account Balance</Link></button>
 
               <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/home">Home</Link></button>
+
+              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/login">Login</Link></button>
+
+              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/credit">Credit</Link></button>
+
+              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/debit">Debit</Link></button>
 
 
               <AccountBalance accountBalance={this.props.accountBalance}/>

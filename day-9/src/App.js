@@ -32,13 +32,15 @@ class App extends Component {
   );
   const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
   
+  const CreditComponent = () => (<Credit user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
+  
   
  
 
     return (
       <BrowserRouter>
         <Routes>
-        <Route exact path="/" element={<HomeComponent/>}/>
+        <Route exact path="/home" element={<HomeComponent/>}/>
         <Route exact path="/userProfile" element={<UserProfileComponent/>}/>
         <Route exact path="/login" element={<LogInComponent/>}/>
         </Routes>
