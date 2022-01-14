@@ -1,57 +1,53 @@
-// src/components/AccountBalance.js
+//import React, {Component} from 'react';
+import React, {useState} from 'react';
+import Home from './Home';
+ 
+function Debit(){
 
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import { Fragment, useState } from 'react';
-
-function Credits(){
     const [name, setName] = useState(0);
    const [amount, setAmount] = useState(0);
    const [debit, setDebit] = useState(["100"])
    const [credit, setCredit] = useState([{amount:1000, name: "Coffee Machine"}
   ]);
+
     const addCredit = () =>{
-        const newDebits = [...credit];
+        const newCredits = [...credit];
         newCredits.push({amount, name});
-        setDebit(newCredits);
+        setCredit(newCredits);
       }
+      const onChangeName = (event) => {
+        setName(event.target.value);
+      };
+    
+      const onChangeAmount = (event) => {
+        setAmount(parseInt(event.target.value));
+      };
+    
 
-      //return();
-}
 
 
-
-class Credit extends Component{
-    render() {
+return(
+    <div className = "creditapp">
+        {credit.map((credit,key) => {
+            return(<div key={key}>
+                {credit.name}::{credit.amount}
+                </div>
+                
+            
         
-        return (
-            <div>
-              <img src="https://letstalkpayments.com/wp-content/uploads/2016/04/Bank.png" alt="bank"/>
-              <h1 className = "text-center mt-5">Bank of React</h1>
+   
+    );
+})}
 
-              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/userProfile">User Profile</Link></button>
+    <input onChangeName = {onChangeName} type = "text" placeholder = "name"/>
+    <input onChangeAmount ={onChangeAmount} type = "number" placeholder = "amount"/>
+    <button onClick = {addCredit}>Add Credit</button> 
 
+    </div>
+    
 
-              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/AccountBalance">Account Balance</Link></button>
-
-              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/home">Home</Link></button>
-
-              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/login">Login</Link></button>
-
-              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/credit">Credit</Link></button>
-
-              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/debit">Debit</Link></button>
-
-
-              <AccountBalance accountBalance={this.props.accountBalance}/>
-
-
-            </div>
-        );
-      }
-
-
-
+);
 }
 
-export default Credit;
+
+export default Debit; 

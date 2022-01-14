@@ -1,36 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AccountBalance from './AccountBalance';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-    // trying to connect the links to each profile all around
-    class Home extends Component {
-      render() {
-        
-        return (
-            <div>
-              <img src="https://letstalkpayments.com/wp-content/uploads/2016/04/Bank.png" alt="bank"/>
-              <h1 className = "text-center mt-5">Bank of React</h1>
+function Home(props) {
+    return (
+        <div>
+          <img src="https://res.cloudinary.com/andreahabib/image/upload/v1642026304/React_Bank_dk7n1a.png" alt="bank"/>
+          <h1>Bank of React</h1>
 
-              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/userProfile">User Profile</Link></button>
-
-
-              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/accountBalance">Account Balance</Link></button>
+          <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/userProfile">User Profile</Link></button>
+          <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="./AccountBalance">Account Balance</Link></button>
 
               <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/home">Home</Link></button>
 
               <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/login">Login</Link></button>
 
-              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/credit">Credit</Link></button>
+              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/Credit">Credit</Link></button>
 
-              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/debit">Debit</Link></button>
+              <button className = "btn btn-outline-dark btn-lg ml-3"><Link to="/Debit">Debit</Link></button>
 
+          <AccountBalance accountBalance={props.accountBalance}/>
+        </div>
+    );
+  }
 
-              <AccountBalance accountBalance={this.props.accountBalance}/>
-
-
-            </div>
-        );
-      }
-    }
-    
-    export default Home;
+export default Home;
