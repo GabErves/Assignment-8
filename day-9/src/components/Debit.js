@@ -28,19 +28,26 @@ function Debit(){
 
 return(
     <div className = "debitapp">
-        {debit}.map((debit,key) => {
-            return(<div key={key}>{"debit.name"}-{"debit.amount"}{""}</div>);
+        {debit.map((debit,key) => {
+            return(<div key={key}>
+                {debit.name}::{debit.amount}
+                </div>
+                
             
         
-    </div>
+   
     );
 })}
 
     <input onChangeName = {onChangeName} type = "text" placeholder = "name"/>
     <input onChangeAmount ={onChangeAmount} type = "number" placeholder = "amount"/>
-    <button onClick = {addDebit}>Add Debit</button> //
+    <button onClick = {addDebit}>Add Debit</button> 
+
+    </div>
     
 
-};
+);
+}
+
 
 export default Debit; 
