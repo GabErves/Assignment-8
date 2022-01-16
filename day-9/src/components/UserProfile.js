@@ -3,6 +3,7 @@
 
 import React from 'react';
 import AccountBalance from './AccountBalance';
+import { Link } from 'react-router-dom';
 
 function UserProfile(props) {
     return (

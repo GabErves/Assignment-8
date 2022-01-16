@@ -1,18 +1,12 @@
-// src/components/AccountBalance.js
+import React from 'react';
+import UserProfile from './UserProfile';
 
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-
-class AccountBalance extends Component {
-  render() {
+function AccountBalance(props) {
     return (
-      
         <div>
-          
-          Balance: {this.props.accountBalance}
+          Balance: {props.accountBalance}
         </div>
     );
   }
-}
 
 export default AccountBalance;

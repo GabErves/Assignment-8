@@ -39,8 +39,8 @@ return(
     );
 })}
 
-    <input onChangeName = {onChangeName} type = "text" placeholder = "name"/>
-    <input onChangeAmount ={onChangeAmount} type = "number" placeholder = "amount"/>
+    <input onChange = {onChangeName} type = "text" placeholder = "name"/>
+    <input onChange ={onChangeAmount} type = "number" placeholder = "amount"/>
     <button onClick = {addDebit}>Add Debit</button> 
 
     </div>
