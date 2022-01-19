@@ -2,19 +2,21 @@
 import React, {useState} from 'react';
 import Home from './Home';
  
-function Debit(){
+function Debit(props){
 
     const [name, setName] = useState(0);
    const [amount, setAmount] = useState(0);
-   const [debit, setDebit] = useState(["100"])
-   const [credit, setCredit] = useState([{amount:1000, name: "Coffee Machine"}
+   //const [debit, setDebit] = useState(["100"])
+   const [debit, setDebit] = useState([{amount:1000, name: "Coffee Machine"}
   ]);
 
     const addDebit = () =>{
         const newDebits = [...debit];
         newDebits.push({amount, name});
         setDebit(newDebits);
+        props.setAccountBalance((accountBalance)=>accountBalance+=amount);
       }
+
       const onChangeName = (event) => {
         setName(event.target.value);
       };
@@ -38,6 +40,7 @@ return(
    
     );
 })}
+<p>Balance: {props.accountBalance}</p>
 
     <input onChange = {onChangeName} type = "text" placeholder = "name"/>
     <input onChange ={onChangeAmount} type = "number" placeholder = "amount"/>

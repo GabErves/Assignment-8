@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 
-function Credit(){
+function Credit(props){
 
     const [name, setName] = useState(0);
    const [amount, setAmount] = useState(0);
@@ -33,6 +33,7 @@ function Credit(){
         const newCredits = [...credit];
         newCredits.push({amount, name}); // 
         setCredit(newCredits);
+        props.setAccountBalance((accountBalance)=>accountBalance-=amount);
       }
 
       const getData = async () =>{
@@ -66,6 +67,7 @@ return(
    
     );
 })}
+<p>Balance: {props.accountBalance}</p>
 
     <input onChange = {onChangeName} type = "text" placeholder = "name"/>
     <input onChange ={onChangeAmount} type = "number" placeholder = "amount"/>

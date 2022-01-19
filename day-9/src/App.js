@@ -74,8 +74,8 @@ const [debit, setDebit] = useState(["100"])
         <Route path="/userProfile" element={<UserProfile userName={currentUser.userName} memberSince={currentUser.memberSince}  />}/>
         <Route path="/login" element={<LogIn user={currentUser} mockLogIn={mockLogIn}/>}/>
         <Route path="/AccountBalance" element={<AccountBalance accountBalance={accountBalance}/>}/>
-        <Route path="/Credit" element={<Credit credit={accountBalance}/>}/>
-        <Route path="/Debit" element={<Debit debit={debit}/>}/>
+        <Route path="/Credit" element={<Credit accountBalance={accountBalance} setAccountBalance = {setAccountBalance}/>}/>
+        <Route path="/Debit" element={<Debit debit={debit} accountBalance={accountBalance} setAccountBalance = {setAccountBalance}/>}/>
         
   ...
         </Routes>
